@@ -11,7 +11,6 @@ void sig_handler(int signum)
 {
     int zero = 0;
     int number = 2;
-    int k;
 	switch (signum) {
 
 		case SIGCHLD:
@@ -20,7 +19,8 @@ void sig_handler(int signum)
 
 		case SIGUSR1: 
 			printf("Signal User 1! Oh No! Time For Division By Zero!\n");
-			k = number/zero; // trying to divide by zero
+			int k = number/zero; // trying to divide by zero
+			printf("%d",k);
 
 		case SIGFPE:
 			printf("Floating Point Error Signal! Oh No! Well Anyway.. Try Abort!!\n");
